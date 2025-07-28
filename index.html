@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posting App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="fb-header">
+      <!-- Left: Logo -->
+      <div class="header-left">
+        <img src="images/p.png" alt="Logo" class="logo" />
+      </div>
+
+      <!-- Center: Icons -->
+      <div class="header-center">
+        <div class="icon"><i class="fas fa-home"></i></div>
+        <div class="icon"><i class="fas fa-video"></i></div>
+        <div class="icon"><i class="fas fa-store"></i></div>
+        <div class="icon"><i class="fas fa-gamepad"></i></div>
+        <div class="icon"><i class="fas fa-users"></i></div>
+      </div>
+
+      <!-- Right: Profile, Msg, Notification -->
+      <div class="header-right">
+        <div class="icon"><i class="fas fa-table-cells"></i></div>
+        <div class="icon"><i class="fas fa-bell"></i></div>
+
+        <img src="images/profile.png" alt="Profile" class="profile-pic" />
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="profile_container">
+        <img src="images/profile.png" alt="" />
+        <input type="text" id="username" placeholder="User Name" />
+      </div>
+
+      <div class="des_container">
+        <textarea
+          id="description"
+          rows="3"
+          placeholder="What's on your mind?"
+        ></textarea>
+      </div>
+
+      <div class="bg-options" id="bg-options">
+        <img src="images/bg1.png" onclick="selectBg(this, 'images/bg1.png')" />
+        <img src="images/bg2.png" onclick="selectBg(this, 'images/bg2.png')" />
+        <img src="images/bg3.png" onclick="selectBg(this, 'images/bg3.png')" />
+        <img src="images/bg4.png" onclick="selectBg(this, 'images/bg4.png')" />
+        <img src="images/bg5.png" onclick="selectBg(this, 'images/bg5.png')" />
+        <img src="images/bg6.png" onclick="selectBg(this, 'images/bg6.png')" />
+        <img src="images/bg7.png" onclick="selectBg(this, 'images/bg7.png')" />
+        <img src="images/bg8.png" onclick="selectBg(this, 'images/bg8.png')" />
+        <img src="images/bg9.png" onclick="selectBg(this, 'images/bg9.png')" />
+        <img
+          src="images/bg10.png"
+          onclick="selectBg(this, 'images/bg10.png')"
+        />
+        <i
+          class="fa-solid fa-xmark cancel-icon"
+          onclick="selectBg(this, null)"
+        ></i>
+      </div>
+
+      <button class="post_button" onclick="createPost()">Post</button>
+    </div>
+    <div id="editModal" class="modal">
+      <div class="modal-content animate">
+        <h3>Edit Post</h3>
+        <textarea id="editDescInput" placeholder="Edit your post..."></textarea>
+        <div class="actions">
+          <button class="save-btn" onclick="saveEdit()">Save</button>
+          <button class="cancel-btn" onclick="closeEditModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="postsContainer"></div>
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
